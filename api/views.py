@@ -34,19 +34,7 @@ class UserLoginView(APIView):
         return Response({'detail': 'Method "GET" not allowed.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
-# class UserLoginView(APIView):
-#     def post(self, request):
-#         user = authenticate(username=request.data['username'], password=request.data['password'])
-#         if user:
-#             token, created = Token.objects.get_or_create(user=user)
-#             return Response({'token': token.key})
-#         else:
-#             return Response({'error': 'Invalid credentials'}, status=401)
 
-# class MembersListCreate(generics.ListCreateAPIView):
-#     permission_classes = [IsAuthenticated]
-#     queryset = Members.objects.all()
-#     serializer_class = MemberSerializers
 
 from rest_framework import generics
 
