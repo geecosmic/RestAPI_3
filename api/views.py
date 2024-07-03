@@ -44,7 +44,9 @@ class MembersListCreate(generics.ListCreateAPIView):
 
     def get_permissions(self):
         if self.request.method == 'GET':
-            return [IsPublicEndpoint()]
+            # return [IsPublicEndpoint()]
+            return [IsAuthenticatedEndpoint()]
+
         elif self.request.method == 'POST':
             return [IsAuthenticatedEndpoint()]
         else:
