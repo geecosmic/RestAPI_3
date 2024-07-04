@@ -6,7 +6,7 @@ class CustomUser(AbstractUser):
     pass
 
 class Members(models.Model):
-    keynum = models.IntegerField()
+    keynum = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     degree = models.CharField(max_length=200)
     status = models.CharField(max_length=200)
